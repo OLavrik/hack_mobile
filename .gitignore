@@ -171,3 +171,5 @@ backend/api/blog/model_ranking/modelRMSE
 backend/api/blog/model_ranking/modelRMSE_25_05
 synonyms/embedding/weights/SO_vectors_200.bin
 !backend/resources/data/search-queries.csv
+
+*.csv
