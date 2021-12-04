@@ -25,7 +25,7 @@ Csv table with predictions to test data.
 - ``data_vizual`` - отрисовка графиков 
 - ``backend`` - API c интерактивными графиками 
 
-## Usage
+## Getting Started
 ### Backend API with data visualization
 - cd backend
 - conda create -n hyper-adv python=3.7
