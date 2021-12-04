@@ -8,8 +8,6 @@ import plotly
 import plotly.graph_objects as go
 import numpy as np
 import pandas as pd
-import altair as alt
-from vega_datasets import data
 from plotly.subplots import make_subplots
 import plotly.express as px
 import json

@@ -171,5 +171,13 @@ backend/api/blog/model_ranking/modelRMSE
 backend/api/blog/model_ranking/modelRMSE_25_05
 synonyms/embedding/weights/SO_vectors_200.bin
 !backend/resources/data/search-queries.csv
+!backend/web/static/data/test_sample.csv
+!backend/web/static/data/test_post_sample.csv
+!backend/web/static/data/test_sample_predict.csv
+!backend/web/static/data/importence_features.csv
+!backend/web/static/data/all_prepared_for_learn_prep1_del_bundle.csv
+!backend/web/static/data/unique.csv
+!backend/web/static/data/describe.csv
+!backend/web/static/data/sample.csv
 
-*.csv
+*.zip

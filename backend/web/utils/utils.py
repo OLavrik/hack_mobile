@@ -19,7 +19,6 @@ nan_dict = {
         "os": 233 / dataset_train_size,
         "osv": 283 / dataset_train_size
 }
-
 summury_class = {
         "5": 17187506,
         "3": 14187054,

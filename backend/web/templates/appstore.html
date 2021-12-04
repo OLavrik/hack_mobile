@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block script %}
+<!-- 
+put your custom script or styling here
+
+-->
+{% endblock script %}
+
+
+{% block my_content %}
+<!-- Confirmed, Recovered, Deaths Card -->
+
+<!-- Plotly plot placeholder -->
+<div class="container-fluid">
+    <div class="row" >
+        <div class="chart" id="plotly-geo">
+        <!-- Placeholder for map-->
+
+
+        </div>
+
+    </div>
+</div>
+<!-- Script to execute the Json ( we can create it also with looping) -->
+<script>
+    //Parse your Json variable here
+    var graphs = {{ context.plot1 | safe }};
+    Plotly.plot('plotly-geo', graphs, {});
+</script>
+
+
+{% endblock my_content %}

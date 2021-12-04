@@ -13,6 +13,6 @@ app_ = {"fugo": [{'number_votes': 51.0, 'rank': 4.9,
 class APP_VISUAL:
 
     def cloud_words(self, game_name):
-        list
         for d in app_[game_name]:
+            pass
 

@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% block script %}
+    <!--
+    put your custom script or styling here
+
+    -->
+{% endblock script %}
+
+
+{% block my_content %}
+    <!-- Confirmed, Recovered, Deaths Card -->
+
+    <!-- Plotly plot placeholder -->
+    <div class="container-fluid">
+
+        <div class="row">
+            <!-- Placeholder for the global-cases plot-->
+            <div class="chart" id="plotly-table4">
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col">
+            </div>
+            <div class="col-6">
+                <div class="chart" id="plotly-table0">
+                    {{ context.info|safe }}
+                </div>
+            </div>
+            <div class="col">
+            </div>
+
+        </div>
+        <div class="row">
+            <!-- Placeholder for the global-cases plot-->
+            <div class="chart" id="plotly-table1">
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Placeholder for the global-cases plot-->
+            <div class="chart" id="plotly-table2">
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Placeholder for the global-cases plot-->
+            <div class="chart" id="plotly-table3">
+            </div>
+        </div>
+
+    </div>
+    <!-- Script to execute the Json ( we can create it also with looping) -->
+
+    <script>
+        //Parse your Json variable here
+        var graphs = {{ context.plot1 | safe }};
+        Plotly.plot('plotly-table1', graphs, {});
+    </script>
+
+    <script>
+        //Parse your Json variable here
+        var graphs = {{ context.plot2 | safe }};
+        Plotly.plot('plotly-table2', graphs, {});
+    </script>
+
+    <script>
+        //Parse your Json variable here
+        var graphs = {{ context.plot3 | safe }};
+        Plotly.plot('plotly-table3', graphs, {});
+    </script>
+
+    <script>
+        //Parse your Json variable here
+        var graphs = {{ context.f_imp | safe }};
+        Plotly.plot('plotly-table4', graphs, {});
+    </script>
+
+{% endblock my_content %}

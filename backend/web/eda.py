@@ -47,6 +47,10 @@ class EDA_VISUAL:
 
         fig.update_traces(hoverinfo='label+percent', textinfo='value',
                           marker=dict(colors=custom_colors))
+        fig.update_layout(
+            title="Number of elements per group",
+            legend_title="Segments",
+        )
         return self._get_json_fig(fig)
 
     def aggreg_nun(self):
@@ -55,7 +59,10 @@ class EDA_VISUAL:
 
         fig.update_traces(hoverinfo='label+percent', textinfo='value',
                           marker=dict(colors=custom_colors))
-
+        fig.update_layout(
+            title="Number of NaN elements in percents",
+            legend_title="Features",
+        )
         return self._get_json_fig(fig)
 
     def aggreg_unique(self):
@@ -67,6 +74,9 @@ class EDA_VISUAL:
                        fill_color='lavender',
                        align='left'))
         ])
+        fig.update_layout(
+            title="Number of unique elements",
+        )
         return self._get_json_fig(fig)
 
     def hist_(self):
