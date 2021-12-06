@@ -13,7 +13,7 @@ nltk.download("stopwords")
 russian_stopwords = stopwords.words("russian") + ['подписка', 'ваш',
                                                       'свой', 'который',
                                                       'каждый', 'мочь',
-                                                      'весь', 'это']
+                                                      'весь', 'это', '.']
 
 
 app_ = {"fugo": [{'number_votes': 51.0, 'rank': 4.9,
@@ -105,17 +105,19 @@ def get_word_cloud_plot(app_name):
 
     keywords = Counter(keywords_list)
     print(keywords.most_common(100))
-    x, y = np.ogrid[:500, :500]
+    x, y = np.ogrid[:1200, :1200]
 
-    mask = (x - 250) ** 2 + (y - 250) ** 2 > 240 ** 2
+    mask = (x - 600) ** 2 + (y - 600) ** 2 > 590 ** 2
     mask = 255 * mask.astype(int)
-    word_cloud = WordCloud(collocations=False, background_color='red',
-                           max_words=50, width=500, height=500,
-                           mask=mask, contour_width=3, contour_color='black').generate_from_frequencies(dict(keywords))
+    word_cloud = WordCloud(collocations=True, background_color='white',
+                           max_words=50, width=1200, height=1200,
+                           mask=mask, contour_width=3, contour_color='black', ).generate_from_frequencies(
+        dict(keywords))
 
     fig = px.imshow(word_cloud)
     fig.update_xaxes(rangeslider_visible=True)
-    fig.update_layout(width=1500, height=500)
+    fig.update_xaxes(visible=False)
+    fig.update_yaxes(visible=False)
     plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return plot_json
 
