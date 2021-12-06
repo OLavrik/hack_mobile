@@ -114,10 +114,14 @@ def get_word_cloud_plot(app_name):
                            mask=mask, contour_width=3, contour_color='black', ).generate_from_frequencies(
         dict(keywords))
 
-    fig = px.imshow(word_cloud)
-    fig.update_xaxes(rangeslider_visible=True)
+    fig = px.imshow(word_cloud, title=f"Main words from description of \"{app_name}\"")
     fig.update_xaxes(visible=False)
     fig.update_yaxes(visible=False)
+
+    """ fig.update_layout(
+        title=f"Main words from description of \"{app_name}\""
+    )"""
+
     plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return plot_json
 
