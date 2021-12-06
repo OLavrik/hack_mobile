@@ -6,6 +6,7 @@ from web.utils import utils, plotly_plot
 import json
 from .eda import EDA_VISUAL
 from .test_model import plot_predicts, test_sample, test_sample_predict, test_post_sample, load_model_info, plot_I
+from .appstore import get_word_cloud_plot
 
 # Loading raw data and clean it
 
@@ -36,11 +37,7 @@ def plot_plotly_global():
 
 @app.route("/appstore", methods=['POST'])
 def plot_appstore():
-    print(request.form)
-    # total confirmed cases globally
-    sample, describe, unique, numeric, nan_dict, summury_class = utils.load_data()
-    eda = EDA_VISUAL(sample, describe, unique, numeric, nan_dict, summury_class)
-    plot1 = eda.aggregation_class()
+    plot1 = get_word_cloud_plot(request.form['appname'])
 
     context = {"plot1": plot1}
     return render_template('appstore.html', context=context)
